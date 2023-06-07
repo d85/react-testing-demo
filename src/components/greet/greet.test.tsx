@@ -1,8 +1,18 @@
-import { render, screen } from '@testing-library/react'
-import { Greet } from './greet'
+/**
+ * Greet should render the text hello and if a name is passed into the component, it should render hello followed by the name
+ */
+
+import { render, screen } from "@testing-library/react"
+import { Greet } from "./greet"
 
 test('Greet renders correctly', () => {
-  render(<Greet />)
-  const textElement = screen.getByText(/hello/i)
+  render(<Greet/>)
+  const textElement = screen.getByText('Hello')
+  expect(textElement).toBeInTheDocument()
+})
+
+test('Greet renders with a name', () => {
+  render(<Greet name='d85' />)
+  const textElement = screen.getByText('Hello d85')
   expect(textElement).toBeInTheDocument()
 })
