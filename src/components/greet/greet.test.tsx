@@ -12,3 +12,11 @@ describe('Greet', () => {
     expect(textElement).toBeInTheDocument()
   })
 })
+
+describe('Nested', () => {
+  test('Greet renders a name', () => {
+    render(<Greet name="d85"/>)
+    const textElement = screen.getByText("Hello d85")
+    expect(textElement).toBeInTheDocument()
+  })
+})
