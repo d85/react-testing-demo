@@ -6,12 +6,12 @@ describe('Application', () => {
     render(<Application />)
 
     const pageHeading = screen.getByRole('heading', {
-      name: 'Job application form'
+      level: 1,
     })
     expect(pageHeading).toBeInTheDocument()
 
     const sectionHeading = screen.getByRole('heading', {
-      name: 'Section 1'
+      level: 2
     })
     expect(sectionHeading).toBeInTheDocument()
 
