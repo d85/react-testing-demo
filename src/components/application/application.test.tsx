@@ -4,6 +4,17 @@ import { Application } from "./application"
 describe('Application', () => {
   test('renders correctly', () => {
     render(<Application />)
+
+    const pageHeading = screen.getByRole('heading', {
+      name: 'Job application form'
+    })
+    expect(pageHeading).toBeInTheDocument()
+
+    const sectionHeading = screen.getByRole('heading', {
+      name: 'Section 1'
+    })
+    expect(sectionHeading).toBeInTheDocument()
+
     const nameElement = screen.getByRole('textbox', {
       name: 'Name'
     })
