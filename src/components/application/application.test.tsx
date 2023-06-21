@@ -18,6 +18,9 @@ describe('Application', () => {
     const paragraphElement = screen.getByText('All fields are mandatory')
     expect(paragraphElement).toBeInTheDocument()
 
+    const closeElement = screen.getByTitle('close')
+    expect(closeElement).toBeInTheDocument()
+
     const imageElement = screen.getByAltText('a person with a laptop')
     expect(imageElement).toBeInTheDocument()
 
