@@ -18,6 +18,15 @@ describe('Application', () => {
     const paragraphElement = screen.getByText('All fields are mandatory')
     expect(paragraphElement).toBeInTheDocument()
 
+    const paragraphElement1 = screen.getByText('fields are', {exact: false})
+    expect(paragraphElement1).toBeInTheDocument()
+
+    const paragraphElement2 = screen.getByText(/all fields are mandatory/i, {exact: false})
+    expect(paragraphElement2).toBeInTheDocument()
+
+    const paragraphElement3 = screen.getByText((content) => content.includes("All fields"), {exact: false})
+    expect(paragraphElement3).toBeInTheDocument()
+
     const closeElement = screen.getByTitle('close')
     expect(closeElement).toBeInTheDocument()
 
