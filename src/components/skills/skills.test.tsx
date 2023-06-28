@@ -23,4 +23,12 @@ describe('Skills', () => {
     })
     expect(loginButton).toBeInTheDocument()
   })
+
+  test('Start Learning button is not rendered', () => {
+    render(<Skills skills={skills}/>)
+    const startLearningButton = screen.queryByRole('button', {
+      name: 'Start learning'
+    })
+    expect(startLearningButton).not.toBeInTheDocument()
+  })
 })
